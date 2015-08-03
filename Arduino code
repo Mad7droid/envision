@@ -1,0 +1,86 @@
+
+
+
+void setup() {
+  Serial.begin(9600);
+ // Serial.println("test");
+    pinMode(13, OUTPUT);
+
+  Serial.flush();
+}
+
+void loop()
+{
+  digitalWrite(13,HIGH);
+  int S1 = analogRead(A0);
+  int S2 = analogRead(A1);
+  int S3 = analogRead(A2);
+  int S4 = analogRead(A3);
+ 
+ if(S1 > 700)
+ {
+  if(S2 > 700)
+  {
+    if(S3 > 700)
+     {
+      if(S4 > 700)
+      {Serial.print(0);
+      delay(200);
+      }
+      else 
+      {Serial.print (8);
+      delay(200);
+      }
+     }
+     else 
+      {Serial.print (5);
+      delay(200);
+      }
+  }
+  else
+   {Serial.print (1);
+    delay(200);
+   }
+      
+  }
+else if(S2 > 700)
+  {
+    if(S3 > 700)
+     {
+      if(S4 > 700)
+      {
+      Serial.print(9);
+      delay(200);
+      }
+      else 
+      {Serial.print (6);
+      delay(200);
+      }
+     }
+     else 
+      {Serial.print (2);
+      delay(200);
+      }
+  }
+else if(S3 > 700)
+     {
+      if(S4 > 700)
+      {
+      Serial.print(7);
+      delay(200);
+      }
+      else 
+      {Serial.print (3);
+      delay(200);
+      }
+
+     }
+      else if (S4 > 700)
+      {
+      Serial.print (3);
+      delay(200);
+      }
+}
+
+
+     
